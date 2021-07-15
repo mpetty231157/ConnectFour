@@ -5,8 +5,8 @@ public class ConnectFour {
     public static void main(String[] args) {
 
         boolean gameEnded = false;
-        char player1 = 'y';
-        char player2 = 'n';
+        char player1 = 'x';
+        char player2 = 'o';
         int columnChoice;
         int currRow;
         int numTurns = 0;
@@ -20,8 +20,8 @@ public class ConnectFour {
         char[][] array = new char[numRows][numColumns];
         initializeBoard(array);
         printBoard(array);
-        System.out.println("Player 1: y");
-        System.out.println("Player 2: n");
+        System.out.println("Player 1: x");
+        System.out.println("Player 2: o");
         int totalPossibleTurns = numRows * numColumns;
 
         while (gameEnded == false) {
@@ -80,7 +80,7 @@ public class ConnectFour {
     public static int insertChip(char[][] array, int col, char chipType) {
         int i;
         for (i = array.length - 1; i >= 0; i--) {
-            if (array[i][col] == 'y' || array[i][col] == 'n') {
+            if (array[i][col] == 'x' || array[i][col] == 'o') {
                 continue;
             } else {
                 array[i][col] = chipType;
@@ -98,11 +98,11 @@ public class ConnectFour {
         boolean downSide = true;
         int opponentChip;
 
-        if (chipType == 'y') {
-            opponentChip = 'n';
+        if (chipType == 'x') {
+            opponentChip = 'o';
         }
         else {
-            opponentChip = 'y';
+            opponentChip = 'x';
         }
 
         for (int y = 1; y < array.length; y++) {
